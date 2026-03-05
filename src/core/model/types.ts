@@ -11,7 +11,7 @@ export type Category = {
 export type Metadata = {
   title: string;
   size: 3 | 4;
-  difficulty_target: DifficultyLabel;
+  difficulty_target?: DifficultyLabel;
   difficulty_estimated?: DifficultyLabel;
   seed?: number;
 };

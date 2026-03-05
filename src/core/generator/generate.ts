@@ -66,7 +66,7 @@ export function generatePuzzle(input: GenerateInput): Puzzle {
         continue;
       }
 
-      if (!matchesTarget(input.metadata.difficulty_target, estimated)) {
+      if (input.metadata.difficulty_target !== undefined && !matchesTarget(input.metadata.difficulty_target, estimated)) {
         continue;
       }
 

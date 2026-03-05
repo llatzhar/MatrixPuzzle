@@ -103,7 +103,9 @@ export function validateGenerateInput(input: unknown): GenerateInput {
   assert(isObject(metadata), "metadata is required");
   assert(typeof metadata.title === "string" && metadata.title.length > 0, "metadata.title is required");
   assert(metadata.size === 3 || metadata.size === 4, "metadata.size must be 3 or 4");
-  assert(metadata.difficulty_target === "easy" || metadata.difficulty_target === "medium" || metadata.difficulty_target === "hard", "metadata.difficulty_target must be easy|medium|hard");
+  if (metadata.difficulty_target !== undefined) {
+    assert(metadata.difficulty_target === "easy" || metadata.difficulty_target === "medium" || metadata.difficulty_target === "hard", "metadata.difficulty_target must be easy|medium|hard");
+  }
   if (metadata.seed !== undefined) {
     assert(Number.isInteger(metadata.seed), "metadata.seed must be integer");
   }
@@ -195,7 +197,9 @@ export function validatePuzzle(input: unknown): Puzzle {
   assert(isObject(metadata), "metadata is required");
   assert(metadata.size === 3 || metadata.size === 4, "metadata.size must be 3 or 4");
   assert(typeof metadata.title === "string" && metadata.title.length > 0, "metadata.title is required");
-  assert(metadata.difficulty_target === "easy" || metadata.difficulty_target === "medium" || metadata.difficulty_target === "hard", "metadata.difficulty_target must be easy|medium|hard");
+  if (metadata.difficulty_target !== undefined) {
+    assert(metadata.difficulty_target === "easy" || metadata.difficulty_target === "medium" || metadata.difficulty_target === "hard", "metadata.difficulty_target must be easy|medium|hard");
+  }
 
   const size = metadata.size;
   validateStructureCommon(structure, size as 3 | 4);
