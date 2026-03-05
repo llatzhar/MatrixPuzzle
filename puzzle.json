@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "title": "3x3 ソルバ入力サンプル",
+    "size": 3,
+    "difficulty_target": "medium"
+  },
+  "structure": [
+    {
+      "category": "名前",
+      "items": ["アリス", "ボブ", "チャーリー"],
+      "ordered": false
+    },
+    {
+      "category": "飲み物",
+      "items": ["紅茶", "牛乳", "コーラ"],
+      "ordered": false
+    },
+    {
+      "category": "順位",
+      "items": ["1位", "2位", "3位"],
+      "ordered": true
+    }
+  ],
+  "clues": [
+    {
+      "id": 1,
+      "text": "アリスは紅茶を飲む。",
+      "logic": {
+        "type": "pair",
+        "subjects": ["アリス", "紅茶"]
+      }
+    },
+    {
+      "id": 2,
+      "text": "ボブはコーラではない。",
+      "logic": {
+        "type": "not",
+        "subjects": ["ボブ", "コーラ"]
+      }
+    },
+    {
+      "id": 3,
+      "text": "ボブの順位は2位か3位のどちらか。",
+      "logic": {
+        "type": "either",
+        "subjects": ["ボブ", "2位", "3位"]
+      }
+    },
+    {
+      "id": 4,
+      "text": "チャーリーの飲み物はコーラか牛乳のどちらか一方。",
+      "logic": {
+        "type": "xor",
+        "subjects": ["チャーリー", "コーラ", "牛乳"]
+      }
+    },
+    {
+      "id": 5,
+      "text": "アリスはボブより順位が上。",
+      "logic": {
+        "type": "order",
+        "subjects": ["アリス", "ボブ"],
+        "order": {
+          "category": "順位",
+          "relation": "before",
+          "distance": null
+        }
+      }
+    },
+    {
+      "id": 6,
+      "text": "チャーリーは3位。",
+      "logic": {
+        "type": "pair",
+        "subjects": ["チャーリー", "3位"]
+      }
+    },
+    {
+      "id": 7,
+      "text": "ボブは牛乳を飲む。",
+      "logic": {
+        "type": "pair",
+        "subjects": ["ボブ", "牛乳"]
+      }
+    }
+  ],
+  "solution": [
+    {
+      "名前": "アリス",
+      "飲み物": "紅茶",
+      "順位": "1位"
+    },
+    {
+      "名前": "ボブ",
+      "飲み物": "牛乳",
+      "順位": "2位"
+    },
+    {
+      "名前": "チャーリー",
+      "飲み物": "コーラ",
+      "順位": "3位"
+    }
+  ]
+}

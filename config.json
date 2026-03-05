@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "title": "3x3 サンプル生成設定",
+    "size": 3,
+    "difficulty_target": "medium",
+    "seed": 20260303
+  },
+  "structure": [
+    {
+      "category": "名前",
+      "items": ["アリス", "ボブ", "チャーリー"],
+      "ordered": false
+    },
+    {
+      "category": "飲み物",
+      "items": ["紅茶", "牛乳", "コーラ"],
+      "ordered": false
+    },
+    {
+      "category": "順位",
+      "items": ["1位", "2位", "3位"],
+      "ordered": true
+    }
+  ],
+  "generation": {
+    "allowed_clue_types": ["pair", "not", "either", "xor", "order"],
+    "require_unique_solution": true,
+    "allow_assumption_required": true,
+    "max_attempts": 1000
+  }
+}
