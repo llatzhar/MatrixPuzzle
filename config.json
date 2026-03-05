@@ -2,8 +2,7 @@
   "metadata": {
     "title": "3x3 サンプル生成設定",
     "size": 3,
-    "difficulty_target": "medium",
-    "seed": 20260303
+    "difficulty_target": "medium"
   },
   "structure": [
     {
